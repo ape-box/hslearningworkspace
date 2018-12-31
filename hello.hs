@@ -39,6 +39,12 @@ adjectives = ["lazy", "grouchy", "scheming"]
 x7 :: [String]
 x7 = [adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns]
 
+length' :: Num a => [t] -> a
+length' xs = sum [ 1 | _ <- xs ]
+
+x7' :: [Int]
+x7' = map length x7
+
 main :: IO()
 main = print x1
     >> print x2
@@ -50,5 +56,6 @@ main = print x1
     >> print nouns
     >> print adjectives
     >> print x7
+    >> print x7'
     >> print helloWorld
 
